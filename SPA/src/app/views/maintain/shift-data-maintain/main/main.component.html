@@ -1,0 +1,20 @@
+<div>
+  <div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Shift</th>
+          <th scope="col">Name of Shift</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let msshift of msshifts">
+        <tr>
+          <th>{{msshift.manuf}}</th>
+          <td>{{msshift.shift}}</td>
+          <td>{{msshift.shiftName}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

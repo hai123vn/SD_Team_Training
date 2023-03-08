@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+// import { MaintainModule } from "./views/maintain/maintain.module";
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
@@ -10,8 +11,15 @@ export const routes: Routes = [
     data: {
       title: 'Home'
     },
-    children: []
-  }
+    children: [
+      {
+        path: "maintain",
+        loadChildren: () => import('./views/maintain/maintain.module').then(m => m.MaintainModule)
+      }
+    ]
+  },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: '/dashboard' }
 ];
 
 @NgModule({
